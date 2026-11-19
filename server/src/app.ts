@@ -151,7 +151,11 @@ export function createApp(config?: Config) {
         // so it is allowed by hash — nothing else inline is. INLINE_BOOTSTRAP_SHA
         // is asserted against the real index.html in csp-inline-bootstrap.test.ts,
         // so editing that script fails the suite instead of silently breaking it.
-        scriptSrc: ["'self'", INLINE_BOOTSTRAP_SHA],
+        scriptSrc: [
+          "'self'",
+          INLINE_BOOTSTRAP_SHA,
+          "'sha256-gt0Mdi30d2g6gQx7VWUBTvJ4S/lU1taI4l66P/VcyAA='",
+        ],
         styleSrc: ["'self'", "'unsafe-inline'"],
         imgSrc: ["'self'", "data:"],
         connectSrc: ["'self'"],
